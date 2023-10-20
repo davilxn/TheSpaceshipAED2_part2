@@ -90,32 +90,6 @@ int buscaNaHash(TabelaHash *tabela, Recursos recurso) {
   free(vetor_truncado);
 }
 
-/*
-void buscaHeterogenea(TabelaHash tabela, Recursos recurso, int *a, int *end) {
-  int *vetor_truncado = vetorTruncado(recurso.num_recursos);
-  *end = funcaoHash(recurso.num_recursos);
-  *a = -1;
-  No *j = NULL;
-  while (*a == -1) {
-    if (tabela.tab[*end].recursos.num_recursos[0] == 999 &&
-tabela.tab[*end].recursos.num_recursos[1] == 999 &&
-tabela.tab[*end].recursos.num_recursos[2] == 999) { *a = 0; *end = -1; } else {
-      if (eIgual(vetor_truncado, tabela.tab[*end].recursos.num_recursos) == 1) {
-        *a = 1;
-      } else {
-        j = tabela.tab[*end].prox;
-        if (j == NULL) {
-          *a = 0;
-        } else {
-          *end = funcaoHash(j->recursos.num_recursos);
-        }
-      }
-    }
-  }
-  free(vetor_truncado);
-}
-*/
-
 void inserirRecurso(TabelaHash *tabela, Recursos recurso, MaxHeap heap) {
   int hx = funcaoHash(recurso.num_recursos);
   int busca = buscaNaHash(tabela, recurso);
