@@ -13,9 +13,6 @@ Passageiro *cria_passageiro(int id, char *nome, int idade,
                             char *planeta_de_origem, int doente, int intruso,
                             int id_espaconave) {
   Passageiro *pass = malloc(sizeof(Passageiro));
-  // pass->nome = malloc(sizeof(char) * (strlen(nome) + 1));
-  // pass->planeta_de_origem = malloc(sizeof(char) * (strlen(planeta_de_origem)
-  // + 1));
 
   pass->id = id;
   strcpy(pass->nome, nome);
@@ -96,22 +93,7 @@ Espaconave cria_espaconave(Passageiro *passageiros, int id) {
 Cria a lista de espaçonaves com base na lista de passageiros. Retorna a lista de
 espaçonaves com cada espçonave com seu devido atributo.
 */
-/*
-Espaconave *cria_lista_espaconaves(Passageiro *passageiros) {
-  Espaconave *lista_espaconaves = malloc(10 * sizeof(Espaconave));
-  srand((unsigned int)time(NULL));
-  for (int i = 0; i < 10; i++) {
-    lista_espaconaves[i] = cria_espaconave(passageiros, i);
-  }
 
-  char ***rec = gera_recursos();
-  for (int k = 0; k < 10; k++) {
-    lista_espaconaves[k].recursos = rec[k];
-  }
-  recebe_prioridade(lista_espaconaves);
-  return lista_espaconaves;
-}
-*/
 Espaconave *cria_lista_espaconaves(Passageiro *passageiros) {
   Espaconave *lista_espaconaves = malloc(10 * sizeof(Espaconave));
   srand((unsigned int)time(NULL));
@@ -194,21 +176,6 @@ char ***gera_recursos() {
 Imprime a lista de espaçonves com seus atributos.
 */
 
-/*
-void print_espaconaves(MaxHeap heap) {
-  printf("Espaçonaves:\n");
-
-  for (int i = 0; i < heap.tam; i++) {
-    puts("-------------------------------");
-    printf("id: %d\n", heap.espaconaves[i].id);
-    printf("prioridade: %d\n", heap.espaconaves[i].prioridade);
-    puts("---Recursos--- ");
-    for (int j = 0; j < 5; j++) {
-      printf("recurso %d: %s\n", j + 1, heap.espaconaves[i].recursos[j]);
-    }
-  }
-}
-*/
 void print_espaconaves(MaxHeap heap) {
   printf("Espaçonaves:\n");
 
