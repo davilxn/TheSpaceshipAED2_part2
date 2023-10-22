@@ -79,7 +79,7 @@ Algoritmo Redistribuicao(pagina, irma){
 	int excedente = irma.qtd - metade;
 	para(int i = irma.qtd-1; i >= irma.qtd-excedente-1; i--){
 		se(i == excedente - 1){
-			ajustaPosicaoEPonteiro(pagina, pai, pos);
+			ajustaPosicaoEPonteiro(pagina, pai, pos_pai);
 			pai[pos_pai] = irma[irma.qtd-1];
 			liberar(irma[irma.qtd-1]);
 			irma.qtd--;
