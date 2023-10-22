@@ -40,10 +40,10 @@ Algoritmo consertaEstrutura(pagina){
 		Pagina pai = pagina.pai;
 		Pagina irma;
 		se(pai[pos_pai-1].esq != null){
-			irma = pai.esq;
+			irma = pai[pos_pai-1].esq;
 		}
-		senao se(pai[pos_pai+1].esq != null){
-			irma = pai.dir;
+		senao se(pai[pos_pai+1].dir != null){
+			irma = pai[pos_pai+1].dir;
 		}
 		se(pagina.qtd + irma.qtd < 2d){
 			Concatenacao(pagina, irma);
