@@ -3,12 +3,12 @@ Algoritmo Remover(arvore, chave){
 	se(pagina == null){
 		retorne;
 	}
-	se(pagina == arvore.raiz E pagina.esq == null E pagina.dir == null){
+	se(pagina == arvore.raiz E pagina[pos].esq == null E pagina[pos].dir == null){
 		se(pagina.qtd == 1){
 			liberar(pagina);
 		}
 		senao{
-			Substituir(pagina, posicao);
+			liberar(pagina[pos]);
 		}
 	}
 	senao{
